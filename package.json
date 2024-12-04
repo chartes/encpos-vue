@@ -31,11 +31,6 @@
     "@vue/eslint-config-standard": "^8.0.1",
     "@vitejs/plugin-vue": "^1.6.1",
     "vite": "^2.5.4",
-    "@babel/core": "^7.10.3",
-    "@babel/cli": "^7.10.3",
-    "@babel/runtime": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.10.3",
-    "@babel/eslint-parser": "^7.25.9",
     "eslint": "^8.26.0",
     "eslint-plugin-vue": "^9.0.0"
   },
