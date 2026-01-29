@@ -657,8 +657,13 @@ export default {
       `gte:${inputPromotionYearRange.value[0]},lte:${inputPromotionYearRange.value[1]}`
     )
 
-    search.setRange('metadata.topic_notBefore', 'gte:' + inputTopicRange.value[0])
-    search.setRange('metadata.topic_notAfter', 'lte:' + inputTopicRange.value[1])
+    if (inputTopicRange.value[0] !== initialState.topicRange[0]) {
+      search.setRange('metadata.topic_notBefore', 'gte:' + inputTopicRange.value[0])
+    }
+    if (inputTopicRange.value[1] !== initialState.topicRange[1]) {
+      search.setRange('metadata.topic_notAfter', 'lte:' + inputTopicRange.value[1])
+    }
+
     search.setSorts(inputSort.value)
     search.setIsFulltextSearch(isFulltextSearch)
 
@@ -679,8 +684,13 @@ export default {
     })
 
     watch(inputTopicRange, () => {
-      search.setRange('metadata.topic_notBefore', 'gte:' + inputTopicRange.value[0])
-      search.setRange('metadata.topic_notAfter', 'lte:' + inputTopicRange.value[1])
+      if (inputTopicRange.value[0] !== initialState.topicRange[0]) {
+        search.setRange('metadata.topic_notBefore', 'gte:' + inputTopicRange.value[0])
+      }
+      if (inputTopicRange.value[1] !== initialState.topicRange[1]) {
+        search.setRange('metadata.topic_notAfter', 'lte:' + inputTopicRange.value[1])
+      }
+
       search.setPageNum(1)
       executeSearches()
     })
