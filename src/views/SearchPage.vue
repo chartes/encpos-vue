@@ -1449,10 +1449,23 @@ tr.row-details :deep(em),
   .table tr {
     width: 100%;
   }
+  /* les lignes deviennent des boîtes flex : la table, le thead et le tbody ne doivent plus
+     être des boîtes de tableau, sinon WebKit (Safari, Chrome sur iOS) casse la mise en page
+     quand une ligne de détail est refermée */
+  .table-container .table,
+  .table-container thead,
+  .table-container tbody {
+    display: block;
+  }
   .table-container thead tr,
   .table-container tr.row-infos {
     display: flex;
     flex-wrap: wrap;
+  }
+  .table-container tr.row-details,
+  .table-container tr.row-details :deep(td) {
+    display: block;
+    width: 100%;
   }
   .table-container thead tr {
     justify-content: flex-start;
