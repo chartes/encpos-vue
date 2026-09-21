@@ -4,7 +4,7 @@
       <img
         class="enc-logo"
         alt="Logo de l'École nationale des chartes"
-        src="@/assets/images/footer_logo.png"
+        src="@/assets/images/2026_logo_enc_white.svg"
       />
       <img
         class="humanum-logo"
@@ -32,6 +32,8 @@
 .enc-logo {
   width: auto;
   height: 70px;
+  max-width: 100%;
+  object-fit: contain;
 }
 .humanum-logo {
   width: auto;
